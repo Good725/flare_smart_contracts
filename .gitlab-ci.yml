@@ -1,0 +1,10 @@
+stages:
+    - test
+include: 'https://gitlab.com/web0725/flare/-/blob/master/.gitlab-ci.yml'
+test-contract:
+    stage: test
+    image: node:latest
+    script:
+        - yarn install --frozen-lockfile
+        - yarn hardhat --network develop test
+
