@@ -1,6 +1,12 @@
 stages:
+    - run
     - test
-include: 'https://gitlab.com/web0725/flare/-/blob/master/.gitlab-ci.yml'
+run-localchain:
+    stage: run
+    script:
+        - git clone https://gitlab.com/web0725/flare.git
+        - cd flare
+        - ./launch.sh
 test-contract:
     stage: test
     image: node:latest
