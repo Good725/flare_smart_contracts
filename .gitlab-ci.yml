@@ -1,14 +1,14 @@
 image: node:latest
 stages:
     - run
-    - test
+
 run-localchain:
     stage: run
     script:
         - yarn install --frozen-lockfile
         - yarn hardhat node
 test-contract:
-    stage: test
+    stage: run
     script:
         - yarn install --frozen-lockfile
         - yarn hardhat --network localhost test
