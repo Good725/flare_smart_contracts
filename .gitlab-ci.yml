@@ -3,6 +3,7 @@ stages:
     - test
 run-localchain:
     stage: run
+    image: golang:1.16
     script:
         - git clone https://gitlab.com/web0725/flare.git
         - cd flare
