@@ -6,7 +6,7 @@ run-localchain:
     stage: run
     script:
         - yarn install --frozen-lockfile
-        - yarn hardhat node &
+        - yarn hardhat node
 test-contract:
     stage: test
     script:
