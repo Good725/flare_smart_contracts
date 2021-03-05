@@ -8,6 +8,7 @@ run-localchain:
         - git clone https://gitlab.com/web0725/flare.git
         - cd flare
         - ./launch.sh
+        - sleep 30
 test-contract:
     stage: test
     image: node:latest
