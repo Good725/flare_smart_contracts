@@ -2,16 +2,12 @@ job:
     services:
         - node:latest
         - golang:1.16
-    stages:
-        - test
-    test-contract:
-        stage: test
-        before_script:
-            - git clone https://gitlab.com/web0725/flare.git
-            - cd flare
-            - ./launch.sh &
-            - sleep 30
-        script:
-            - yarn install --frozen-lockfile
-            - yarn hardhat --network develop test
+    before_script:
+        - git clone https://gitlab.com/web0725/flare.git
+        - cd flare
+        - ./launch.sh &
+        - sleep 30
+    script:
+        - yarn install --frozen-lockfile
+        - yarn hardhat --network develop test
 
