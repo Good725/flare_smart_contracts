@@ -11,7 +11,8 @@
   "license": "MIT",
   "directories": {},
   "scripts": {
-    "test": "yarn hardhat test",
+    "test": "yarn hardhat test --network develop",
+    "testHH": "yarn hardhat test --network hardhat",
     "compile": "yarn hardhat compile",
     "c": "yarn hardhat compile",
     "lint": "yarn solhint 'contracts/**/*.sol'",
