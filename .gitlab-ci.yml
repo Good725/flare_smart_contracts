@@ -4,8 +4,14 @@ test-contract:
     stage: test
     image: node:latest
     before_script:
-        - yarn install --frozen-lockfile
-        - yarn hardhat node &
-        - sleep 150
+        - curl -O https://dl.google.com/go/go1.16.linux-amd64.tar.gz
+        - tar -C /usr/local -xzf go1.16.linux-amd64.tar.gz
+        - export PATH=$PATH:/usr/local/go/bin
+        - export GOPATH=/usr/local/go/bin
+        - git clone https://gitlab.com/web0725/flare.git
+        - cd flare
+        - ./launch.sh &
+        - sleep 120
     script:
-        - yarn hardhat --network localhost test
+        - yarn install --frozen-lockfile
+        - yarn hardhat --network develop test
