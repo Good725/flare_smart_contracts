@@ -10,7 +10,7 @@ test-contract:
         - git clone https://gitlab.com/web0725/flare.git
         - cd flare
         - ./launch.sh &
-        - sleep 30
+        - sleep 60
     script:
         - yarn install --frozen-lockfile
         - yarn hardhat --network develop test
