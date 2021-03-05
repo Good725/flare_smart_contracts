@@ -6,11 +6,5 @@ run-localchain:
     image: node:latest
     script:
         - yarn install --frozen-lockfile
-        - yarn hardhat node
-test-contract:
-    stage: run
-    image: node:latest
-    script:
-        - yarn install --frozen-lockfile
-        - yarn hardhat --network localhost test
+        - yarn hardhat node | yarn hardhat --network localhost test
 
