@@ -11,5 +11,5 @@ test-contract:
     stage: test
     script:
         - yarn install --frozen-lockfile
-        - yarn hardhat test
+        - yarn hardhat --network localhost test
 
