@@ -10,4 +10,5 @@ test-contract:
     stage: test
     script:
         - sleep 30
+        - yarn install --frozen-lockfile
         - yarn hardhat run --network localhost scripts/deploy.js
