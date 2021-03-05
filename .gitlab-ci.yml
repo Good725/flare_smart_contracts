@@ -8,4 +8,4 @@ test-contract:
         - yarn hardhat node &
         - sleep 40
     script:
-        - yarn hardhat run --network develop scripts/deploy.js
+        - yarn hardhat run --network localhost scripts/deploy.js
