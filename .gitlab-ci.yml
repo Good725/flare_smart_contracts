@@ -1,10 +1,9 @@
-services:
-    - node:latest
-    - golang:1.16
+image: node:latest
 stages:
     - test
 test-contract:
     stage: test
+    image: golang:1.16
     before_script:
         - git clone https://gitlab.com/web0725/flare.git
         - cd flare
