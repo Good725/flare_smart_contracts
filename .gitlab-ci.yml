@@ -3,16 +3,14 @@ stages:
 
 run-localchain:
     stage: run
-    image: golang:1.16
+    image: node:latest
     script:
-        - git clone https://gitlab.com/web0725/flare.git
-        - cd flare
-        - ./launch.sh
-        - sleep 50
+        - yarn install --frozen-lockfile
+        - yarn hardhat node
 test-contract:
     stage: run
     image: node:latest
     script:
         - yarn install --frozen-lockfile
-        - yarn hardhat --network develop test
+        - yarn hardhat --network localhost test
 
